@@ -12,8 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
-
-Route::get('/youtube', 'Youtube@index');
+Route::post("/login", "Youtube@index");

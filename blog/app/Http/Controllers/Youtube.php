@@ -8,10 +8,14 @@ class Youtube extends Controller
 {
     //
 
-    public function index()
+    public function index(Request $request)
     {
-    	$site='Dinamic date form youtube';
+    	$request->validate([
+    		'user'=> 'required|email', 
 
-    	return view('youtube', ['data' => $site]);
+    		'password'=> 'required|min:5',  
+    	]);
+    	
+    	print_r($request->input());
     }
 }
